@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 {% load static %}
@@ -26,37 +25,19 @@
 
       <section class="jumbotron text-center">
         <div class="container">
-          <h1 class="jumbotron-heading">PortoFolio</h1>
-          <p class="lead text-muted">Somethin erstellen wir Porto folio about our bussniss</p>
+          <h1 class="jumbotron-heading">Jobe Detail</h1>
+          <p class="lead text-muted"> {{ job.summary }} </p>
+         
+          <img src="{{ job.image.url }}" height=300></img>
+
           <p>
-            <a href="mailto:falah.aboud@yahoo.com" class="btn btn-primary my-2">Send me ein Email</a>
+            <a href="{% url 'home' %}" class="btn btn-primary my-2">Backe to Homeseite</a>
           </p>
-          <img src="{% static 'nick.jpg' %}" height=300></img>
+
         </div>
       </section>
 
-      <div class="album py-5 bg-light">
-        <div class="container">
-
-          <div class="row">
-            {% for job in jobs.all %}<br>
-
-            <div class="col-md-4">
-              <a href="{% url 'detail' job.id %}">
-              <div class="card mb-4 shadow-sm">
-                <img class="card-img-top"  src="{{ job.image.url }}">
-                <div class="card-body">
-                  <p class="card-text">{{ job.summary }}</p>
-                </div>
-              </div>
-              </a>
-            </div>
-
-            {% endfor%}
-
-          </div>
-        </div>
-      </div>
+      
 
     </main>
 
